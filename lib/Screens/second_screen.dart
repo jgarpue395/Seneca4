@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seneca/Screens/alumnos_screens.dart';
 import 'package:seneca/Screens/screens.dart';
 
 class SecondScreen extends StatelessWidget {
@@ -136,16 +137,19 @@ class SecondScreen extends StatelessWidget {
                             SizedBox(
                               width: 80,
                               height: 200,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Image(
-                                    image: AssetImage("assets/sombrero.png"),
-                                    width: 75,
-                                  ),
-
-                                  Text("Alumndado del centro", textAlign: TextAlign.center)
-                                ],
+                              child: GestureDetector(
+                                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AlumnadoScreen())),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Image(
+                                      image: AssetImage("assets/sombrero.png"),
+                                      width: 75,
+                                    ),
+                              
+                                    Text("Alumndado del centro", textAlign: TextAlign.center)
+                                  ],
+                                ),
                               ),
                             ),
                 

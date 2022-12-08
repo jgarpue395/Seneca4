@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seneca/providers/alumnado_provider.dart';
 import 'package:seneca/providers/user_provider.dart';
 import 'package:seneca/router/app_routes.dart';
 import 'package:seneca/theme/app_theme.dart';
@@ -14,7 +15,8 @@ class AppState extends StatelessWidget
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => UserProvider(), lazy: false,)
+        ChangeNotifierProvider(create: (_) => UserProvider(), lazy: false,),
+        ChangeNotifierProvider(create: (_) => AlumnadoProvider(), lazy: false,),
       ],
       child: const MyApp(),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:open_mail_app/open_mail_app.dart';
 import 'package:provider/provider.dart';
 import 'package:seneca/models/user.dart';
 import '../providers/user_provider.dart';
@@ -43,7 +44,7 @@ class PersonalScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => OpenMailApp.openMailApp(nativePickerTitle: user.mail),
                   child: Text("Correo: ${user.mail}", style: const TextStyle(fontSize: 18))
                 ),
 

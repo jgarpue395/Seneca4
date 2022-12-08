@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seneca/Screens/screens.dart';
 import 'package:seneca/models/menu_options.dart';
 
 class AppRoutes {
@@ -14,6 +15,12 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+    
+    appRoutes.addAll(
+      {
+        "login" : (BuildContext context) { return const LoginScreen();}
+      }
+    );
 
     for (var option in menuOptions) {
       appRoutes.addAll({option.route : (BuildContext context) => option.screen});
