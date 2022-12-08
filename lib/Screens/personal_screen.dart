@@ -44,7 +44,10 @@ class PersonalScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextButton(
-                  onPressed: () => OpenMailApp.openMailApp(nativePickerTitle: user.mail),
+                  onPressed: () {
+                    List<String> to = [user.mail];
+                    OpenMailApp.composeNewEmailInMailApp(emailContent: EmailContent(to: to));
+                  },
                   child: Text("Correo: ${user.mail}", style: const TextStyle(fontSize: 18))
                 ),
 
